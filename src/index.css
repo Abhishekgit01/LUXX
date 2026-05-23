@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --bg-color: #000000;
+  --bg-light: #ffffff;
+  --text-main: #ffffff;
+  --text-dim: #888888;
+  --accent: #ffffff;
+  
+  --font-heading: 'Prata', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --noise-opacity: 0.08;
+  
+  --border-brutal: 3px solid var(--text-main);
+  --shadow-brutal: 8px 8px 0px var(--accent-red);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Scroll Animations */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Advanced Animations */
+@keyframes flyInLogo {
+  0% {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+    letter-spacing: 50px;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    letter-spacing: 2px;
+  }
+}
+
+.animate-luxx {
+  animation: flyInLogo 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.split-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 0;
+}
+
+.split-white {
+  flex: 1;
+  background: #fff;
+}
+
+.split-black {
+  flex: 1;
+  background: #000;
+}
+
+/* Background Large Text */
+.bg-text-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 30vw;
+  color: rgba(128, 128, 128, 0.05);
+  pointer-events: none;
+  z-index: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
