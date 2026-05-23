@@ -7,26 +7,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const subject = encodeURIComponent(`Tattoo Inquiry: ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\n\nVision:\n${intention}`);
     
-    // Localhost simulation
-    if (window.location.hostname === "localhost") {
-      console.log("Local Dev: Inquiry Received!", Object.fromEntries(formData));
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 10000);
-      return;
-    }
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 10000);
-      })
-      .catch((error) => console.error(error));
+    // This is the "Working" part: it opens their email app immediately
+    window.location.href = `mailto:roshantattooartist@gmail.com?subject=${subject}&body=${body}`;
+    
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 15000);
   };
 
   return (
