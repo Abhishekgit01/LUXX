@@ -108,7 +108,7 @@ const Hero = () => {
           width: 100%;
           margin: 5vh 0 2vh;
           padding: 10px 0;
-          padding-left: 0.3em; 
+          text-indent: 0.3em; /* Use text-indent for centering letter-spacing */
         }
         .hero-subtext {
           display: flex;
@@ -125,10 +125,14 @@ const Hero = () => {
         }
         .hero-cta-group {
           display: flex;
-          gap: 15px;
+          gap: 20px;
+          justify-content: center;
+          width: 100%;
         }
         .btn-main, .btn-outline {
-          padding: 18px 40px;
+          width: 220px; /* Force consistent width for symmetry */
+          padding: 18px 0;
+          text-align: center;
           font-family: var(--font-body);
           text-transform: uppercase;
           letter-spacing: 3px;

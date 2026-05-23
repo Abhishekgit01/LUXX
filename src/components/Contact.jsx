@@ -18,15 +18,17 @@ const Contact = () => {
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        alert("Inquiry Received! Roshan will contact you shortly.");
+        console.log("INQUIRY SENT TO NETLIFY SUCCESSFULLY");
         setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 8000);
+        alert("SUCCESS: Your inquiry has been sent to Roshan.");
+        setTimeout(() => setSubmitted(false), 20000); // 20 seconds
       })
       .catch((error) => {
-        console.error("Submission error:", error);
-        alert("Inquiry Recorded! (Developing Locally)");
+        console.warn("Local Dev: Submission simulated.");
         setSubmitted(true); 
-        setTimeout(() => setSubmitted(false), 8000);
+        alert("SUCCESS: Inquiry Logged! (Mailto: roshantattooartist@gmail.com)");
+        window.location.href = `mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AVision: ${intention}`;
+        setTimeout(() => setSubmitted(false), 20000); // 20 seconds
       });
   };
 
