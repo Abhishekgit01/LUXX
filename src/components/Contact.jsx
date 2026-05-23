@@ -9,27 +9,16 @@ const Contact = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     
-    // Log for local debugging so user can see it works
-    console.log("Form data collected:", Object.fromEntries(formData));
-    
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        console.log("INQUIRY SENT TO NETLIFY SUCCESSFULLY");
         setSubmitted(true);
-        alert("SUCCESS: Your inquiry has been sent to Roshan.");
-        setTimeout(() => setSubmitted(false), 20000); // 20 seconds
+        setTimeout(() => setSubmitted(false), 10000);
       })
-      .catch((error) => {
-        console.warn("Local Dev: Submission simulated.");
-        setSubmitted(true); 
-        alert("SUCCESS: Inquiry Logged! (Mailto: roshantattooartist@gmail.com)");
-        window.location.href = `mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AVision: ${intention}`;
-        setTimeout(() => setSubmitted(false), 20000); // 20 seconds
-      });
+      .catch((error) => console.error(error));
   };
 
   return (
