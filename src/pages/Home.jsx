@@ -3,33 +3,49 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 
 const featuredWorks = [
-  { src: '/mountain.png', title: 'The Mountain Wanderer' },
-  { src: '/greco.png', title: 'Divine Realism' },
-  { src: '/anubis.png', title: 'Ancient Echoes' },
+  { src: '/mountain.png', title: 'The Mountain Wanderer', desc: 'Fine-line detailed landscape band' },
+  { src: '/greco.png', title: 'Divine Realism', desc: 'Greco-Roman inspired sleeve fragment' },
+  { id: 3, src: '/anubis.png', title: 'Ancient Echoes', desc: 'Blackwork mythology study' },
 ];
 
 const Home = () => {
+  const [activeSlide, setActiveSlide] = React.useState(0);
+
+  const nextSlide = () => setActiveSlide((prev) => (prev === featuredWorks.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setActiveSlide((prev) => (prev === 0 ? featuredWorks.length - 1 : prev - 1));
+
   return (
     <div className="page-home">
       <Hero />
 
-      {/* Featured Works Preview */}
-      <section className="home-featured">
+      {/* Featured Slider */}
+      <section className="home-featured-slider">
         <div className="container">
-          <div className="section-header">
-            <span className="label">Featured</span>
-            <h2 className="section-title">Selected Works</h2>
+          <div className="slider-header">
+            <span className="label">Featured Works</span>
+            <h2 className="section-title">Selected Portfolio</h2>
           </div>
-          <div className="featured-grid">
-            {featuredWorks.map((work, i) => (
-              <div key={i} className="featured-card">
-                <img src={work.src} alt={work.title} />
-                <p className="featured-label">{work.title}</p>
+          
+          <div className="slider-container">
+            <div className="slider-content">
+              <div className="slider-image-wrapper">
+                <img 
+                  src={featuredWorks[activeSlide].src} 
+                  alt={featuredWorks[activeSlide].title} 
+                  className="active-image"
+                />
+                <div className="slider-nav">
+                  <button onClick={prevSlide} className="nav-btn prev">←</button>
+                  <button onClick={nextSlide} className="nav-btn next">→</button>
+                </div>
               </div>
-            ))}
-          </div>
-          <div className="cta-row">
-            <Link to="/collection" className="view-all-link">View Full Collection →</Link>
+              <div className="slider-info">
+                <span className="slide-number">0{activeSlide + 1} / 0{featuredWorks.length}</span>
+                <h3 className="slide-title">{featuredWorks[activeSlide].title}</h3>
+                <p className="slide-desc">{featuredWorks[activeSlide].desc}</p>
+                <Link to="/collection" className="view-link">View Collection —</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -86,70 +102,88 @@ const Home = () => {
       </section>
 
       <style>{`
-        .home-featured {
-          padding: 120px 0;
+        .home-featured-slider {
+          padding: 150px 0;
           background: #000;
           color: #fff;
-        }
-        .section-header {
-          margin-bottom: 60px;
-        }
-        .label {
-          display: block;
-          font-family: var(--font-body);
-          text-transform: uppercase;
-          letter-spacing: 5px;
-          font-size: 0.8rem;
-          margin-bottom: 15px;
-          opacity: 0.5;
-        }
-        .section-title {
-          font-family: var(--font-heading);
-          font-size: 3.5rem;
-          font-weight: 300;
-        }
-        .featured-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-          margin-bottom: 60px;
-        }
-        .featured-card {
           overflow: hidden;
         }
-        .featured-card img {
+        .slider-header {
+          margin-bottom: 80px;
+        }
+        .slider-content {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 100px;
+          align-items: center;
+        }
+        .slider-image-wrapper {
+          position: relative;
+          aspect-ratio: 16/10;
+          background: #111;
+        }
+        .active-image {
           width: 100%;
-          aspect-ratio: 4/5;
+          height: 100%;
           object-fit: cover;
           filter: grayscale(1) contrast(1.1);
-          transition: transform 0.6s ease;
         }
-        .featured-card:hover img {
-          transform: scale(1.05);
+        .slider-nav {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          background: #000;
         }
-        .featured-label {
+        .nav-btn {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          background: #000;
+          border: 1px solid rgba(255,255,255,0.1);
+          font-size: 1.5rem;
+          transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+          background: #fff;
+          color: #000;
+        }
+        .slider-info {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+        .slide-number {
           font-family: var(--font-body);
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          font-size: 0.7rem;
-          margin-top: 15px;
-          opacity: 0.5;
+          font-size: 0.9rem;
+          opacity: 0.4;
+          letter-spacing: 5px;
         }
-        .cta-row {
-          text-align: center;
+        .slide-title {
+          font-size: 4rem;
+          line-height: 1;
         }
-        .view-all-link {
+        .slide-desc {
+          font-family: var(--font-body);
+          font-size: 1.1rem;
+          line-height: 1.8;
+          opacity: 0.7;
+          max-width: 400px;
+        }
+        .view-link {
           font-family: var(--font-body);
           text-transform: uppercase;
           letter-spacing: 4px;
-          font-size: 0.85rem;
-          color: #fff;
-          text-decoration: none;
-          padding-bottom: 5px;
+          font-size: 0.9rem;
           border-bottom: 1px solid rgba(255,255,255,0.3);
+          width: fit-content;
+          padding-bottom: 10px;
           transition: all 0.3s ease;
         }
-        .view-all-link:hover {
+        .view-link:hover {
           border-color: #fff;
           letter-spacing: 6px;
         }

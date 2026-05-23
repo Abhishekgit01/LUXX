@@ -21,7 +21,7 @@ const NavBar = () => {
             <Link to="/studio" className={location.pathname === '/studio' ? 'active' : ''}>Studio</Link>
           </li>
         </ul>
-        <button className="nav-cta">Inquiry</button>
+        <Link to="/studio" className="nav-cta">Inquiry</Link>
       </div>
       <style>{`
         .navbar {

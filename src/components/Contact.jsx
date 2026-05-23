@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 
 const Contact = () => {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [intention, setIntention] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Tattoo Inquiry: ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\n\nVision:\n${intention}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nVision:\n${intention}`);
     
     // This is the "Working" part: it opens their email app immediately
     window.location.href = `mailto:roshantattooartist@gmail.com?subject=${subject}&body=${body}`;
     
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 15000);
+    setTimeout(() => setSubmitted(false), 20000);
   };
 
   return (
@@ -46,19 +46,21 @@ const Contact = () => {
                 Your email client should have opened. <br/> 
                 If not, click the button below to send your vision directly to Roshan.
               </p>
-              <a 
-                href={`mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AVision: ${intention}`}
-                className="editorial-submit"
-                style={{ background: '#000', color: '#fff', padding: '20px 40px', textDecoration: 'none', display: 'inline-block' }}
-              >
-                Send Email Manually →
-              </a>
-              <button 
-                onClick={() => setSubmitted(false)}
-                style={{ display: 'block', marginTop: '30px', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', opacity: 0.5 }}
-              >
-                ← Back to form
-              </button>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <a 
+                  href={`mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AVision: ${intention}`}
+                  className="editorial-submit"
+                  style={{ background: '#000', color: '#fff', padding: '20px 40px', textDecoration: 'none', display: 'inline-block' }}
+                >
+                  Send Email Manually →
+                </a>
+                <button 
+                  onClick={() => setSubmitted(false)}
+                  style={{ background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', opacity: 0.5 }}
+                >
+                  ← Back
+                </button>
+              </div>
             </div>
           ) : (
             <form className="editorial-form" onSubmit={handleSubmit} data-netlify="true" name="contact">
@@ -75,10 +77,21 @@ const Contact = () => {
                 />
               </div>
               <div className="editorial-input-group">
+                <label>Email Address</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="john@example.com" 
+                  required 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="editorial-input-group">
                 <label>Intention</label>
                 <textarea 
                   name="intention"
-                  placeholder="Describe your vision..." 
+                  placeholder="Describe your vision (size, placement, style)..." 
                   rows="4" 
                   required
                   value={intention}
