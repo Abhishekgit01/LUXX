@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Collection from './pages/Collection';
 import Studio from './pages/Studio';
+import Inquiry from './pages/Inquiry';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -58,6 +59,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
             <Route path="/studio" element={<Studio />} />
+            <Route path="/inquiry" element={<Inquiry />} />
           </Routes>
         </main>
         <Footer />

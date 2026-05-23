@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +26,7 @@ const Hero = () => {
         <p className="master-artist">Luxx — Master Calligrapher & Ink Artist</p>
         <div className="hero-cta-group">
           <button className="btn-main">View Portfolio</button>
-          <button className="btn-outline">Book Session</button>
+          <Link to="/inquiry" className="btn-outline">Book Session</Link>
         </div>
       </div>
     </div>
