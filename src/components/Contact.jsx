@@ -40,8 +40,25 @@ const Contact = () => {
         </div>
         <div className="contact-editorial-right" data-reveal>
           {submitted ? (
-            <div className="success-message" style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}>
-              Thank you. <br/> Roshan will get back to you soon.
+            <div className="success-message-container" style={{ textAlign: 'left' }}>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', marginBottom: '20px' }}>Inquiry Started</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.2rem', marginBottom: '40px', opacity: 0.8 }}>
+                Your email client should have opened. <br/> 
+                If not, click the button below to send your vision directly to Roshan.
+              </p>
+              <a 
+                href={`mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AVision: ${intention}`}
+                className="editorial-submit"
+                style={{ background: '#000', color: '#fff', padding: '20px 40px', textDecoration: 'none', display: 'inline-block' }}
+              >
+                Send Email Manually →
+              </a>
+              <button 
+                onClick={() => setSubmitted(false)}
+                style={{ display: 'block', marginTop: '30px', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', opacity: 0.5 }}
+              >
+                ← Back to form
+              </button>
             </div>
           ) : (
             <form className="editorial-form" onSubmit={handleSubmit} data-netlify="true" name="contact">

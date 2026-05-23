@@ -1,11 +1,11 @@
 import React from 'react';
 
 const tattoos = [
-  { id: 1, src: '/mountain.png', category: 'Fine-Line Divinity', title: 'Mountain Wanderer' },
-  { id: 2, src: '/greco.png', category: 'Greco-Roman Realism', title: 'The Greco Sleeve' },
-  { id: 3, src: '/cupid.png', category: 'Renaissance Study', title: 'Cupid & Psyche' },
-  { id: 4, src: '/anubis.png', category: 'Ancient Blackwork', title: 'Anubis Eternal' },
-  { id: 5, src: '/elephant.png', category: 'Micro-Realism', title: 'The Great Elephant' },
+  { id: 1, src: '/mountain.png?v=2', category: 'Fine-Line Divinity', title: 'Mountain Wanderer' },
+  { id: 2, src: '/greco.png?v=2', category: 'Greco-Roman Realism', title: 'The Greco Sleeve' },
+  { id: 3, src: '/cupid.png?v=2', category: 'Renaissance Study', title: 'Cupid & Psyche' },
+  { id: 4, src: '/anubis.png?v=2', category: 'Ancient Blackwork', title: 'Anubis Eternal' },
+  { id: 5, src: '/elephant.png?v=2', category: 'Micro-Realism', title: 'The Great Elephant' },
 ];
 
 const Gallery = () => {
