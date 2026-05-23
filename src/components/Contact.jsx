@@ -18,12 +18,13 @@ const Contact = () => {
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
+        alert("Inquiry Received! Roshan will contact you shortly.");
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 8000);
       })
       .catch((error) => {
         console.error("Submission error:", error);
-        // Fallback for local dev where Netlify isn't present
+        alert("Inquiry Recorded! (Developing Locally)");
         setSubmitted(true); 
         setTimeout(() => setSubmitted(false), 8000);
       });

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 
 const featuredWorks = [
-  { src: '/tattoo_1_cropped.png', title: 'Mountain Wanderer' },
-  { src: '/tattoo_2_cropped.png', title: 'Eternal Connection' },
-  { src: '/tattoo_3_cropped.png', title: 'Persistent Hope' },
+  { src: '/portfolio1.png', title: 'Classical Realism' },
+  { src: '/portfolio2.png', title: 'Greek Mythology' },
+  { src: '/portfolio3.png', title: 'Anatomy Study' },
 ];
 
 const Home = () => {
