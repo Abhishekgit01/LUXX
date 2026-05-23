@@ -1,11 +1,11 @@
 import React from 'react';
 
 const tattoos = [
-  { id: 1, src: '/tattoo_1_cropped.png', category: 'Fine-Line Divinity', title: 'The Silent Muse' },
-  { id: 2, src: '/tattoo_2_cropped.png', category: 'Greco-Roman Realism', title: 'Classical Drapery' },
-  { id: 3, src: '/tattoo1.png', category: 'Dark Surrealism', title: 'Fragmented Soul' },
-  { id: 4, src: '/tattoo2.png', category: 'Ancient Blackwork', title: 'Anubis & The Pyramids' },
-  { id: 5, src: '/artist1.png', category: 'Studio Vibes', title: 'Master at Work' },
+  { id: 1, src: '/portfolio1.png', category: 'Fine-Line Divinity', title: 'The Silent Muse' },
+  { id: 2, src: '/portfolio2.png', category: 'Greco-Roman Realism', title: 'Classical Drapery' },
+  { id: 3, src: '/portfolio3.png', category: 'Renaissance Study', title: 'Classical Fragment' },
+  { id: 4, src: '/portfolio4.png', category: 'Dark Surrealism', title: 'Fragmented Soul' },
+  { id: 5, src: '/portfolio5.png', category: 'Ancient Blackwork', title: 'Anubis & The Pyramids' },
 ];
 
 const Gallery = () => {
