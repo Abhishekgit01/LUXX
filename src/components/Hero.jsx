@@ -108,7 +108,7 @@ const Hero = () => {
           width: 100%;
           margin: 5vh 0 2vh;
           padding: 10px 0;
-          text-indent: 0.3em; /* Use text-indent for centering letter-spacing */
+          text-indent: 0.3em;
         }
         .hero-subtext {
           display: flex;
