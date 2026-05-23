@@ -9,6 +9,14 @@ const Contact = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     
+    // Localhost simulation
+    if (window.location.hostname === "localhost") {
+      console.log("Local Dev: Inquiry Received!", Object.fromEntries(formData));
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 10000);
+      return;
+    }
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },

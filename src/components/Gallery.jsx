@@ -6,6 +6,12 @@ const tattoos = [
   { id: 3, src: '/portfolio3.png', category: 'Renaissance Study', title: 'Classical Fragment' },
   { id: 4, src: '/portfolio4.png', category: 'Dark Surrealism', title: 'Fragmented Soul' },
   { id: 5, src: '/portfolio5.png', category: 'Ancient Blackwork', title: 'Anubis & The Pyramids' },
+  { id: 6, src: '/tattoo1.png', category: 'Micro-Realism', title: 'Elephant Soul' },
+  { id: 7, src: '/tattoo2.png', category: 'Greek Mythology', title: 'Medusa Gaze' },
+  { id: 8, src: '/artist1.png', category: 'Studio Vibes', title: 'The Sanctuary' },
+  { id: 9, src: '/artist2.png', category: 'Studio Vibes', title: 'The Detail' },
+  { id: 10, src: '/artist3.png', category: 'Studio Vibes', title: 'The Craft' },
+  { id: 11, src: '/artist1_alt.png', category: 'Master at Work', title: 'Focus' },
 ];
 
 const Gallery = () => {
