@@ -82,7 +82,7 @@ const Hero = () => {
         }
         .philosophy-title {
           font-family: 'Jost', sans-serif;
-          font-size: clamp(2.2rem, 6vw, 7.5rem);
+          font-size: clamp(1.8rem, 4.5vw, 5.5rem);
           line-height: 1.1;
           font-weight: 200;
           letter-spacing: 0.12em;
