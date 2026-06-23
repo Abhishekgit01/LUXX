@@ -11,11 +11,7 @@ const Hero = () => {
   const renderContent = () => (
     <div className="hero-inner">
       <div className="hero-philosophy">
-        <h1 className="philosophy-title">
-          everything that <br/>
-          <span>comes from the</span> <br/>
-          <span className="italic-word">heart</span> is <span className="italic-word">art</span>
-        </h1>
+        <h1 className="philosophy-title">Luxx tattoo studio</h1>
       </div>
 
       <div className="hero-logo-large">
@@ -64,8 +60,8 @@ const Hero = () => {
           -webkit-font-smoothing: antialiased;
         }
         .layer-light {
-          background: #ffffff;
-          color: #000000;
+          background: #000000;
+          color: #ffffff;
           z-index: 1;
         }
         .layer-dark {
@@ -85,31 +81,40 @@ const Hero = () => {
           position: relative;
         }
         .philosophy-title {
-          font-family: var(--font-heading);
-          font-size: clamp(1.8rem, 6vw, 3.2rem);
+          font-family: 'Jost', sans-serif;
+          font-size: clamp(2.2rem, 6vw, 7.5rem);
           line-height: 1.1;
-          font-weight: 400;
-          text-transform: lowercase;
+          font-weight: 200;
+          letter-spacing: 0.12em;
+          text-transform: none;
           margin: 0;
-          max-width: 90vw;
-        }
-        .italic-word {
-          font-style: italic;
-          font-weight: 300;
+          max-width: calc(100vw - 40px);
+          white-space: nowrap;
+          color: #fff;
+          opacity: 0.95;
+          text-rendering: optimizeLegibility;
         }
         .hero-logo-large {
           font-family: var(--font-heading);
           font-size: clamp(4rem, 18vw, 16rem);
           line-height: 1;
           pointer-events: none;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.4em;
+          font-weight: 100;
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
-          margin: 5vh 0 2vh;
+          margin: 4vh 0 1vh;
           padding: 10px 0;
-          text-indent: 0.3em;
+          text-indent: 0.4em;
+          color: #fff;
+          text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 40px rgba(255, 255, 255, 0.9),
+            0 0 80px rgba(255, 255, 255, 0.6);
         }
         .hero-subtext {
           display: flex;
@@ -120,9 +125,10 @@ const Hero = () => {
         .master-artist {
           font-family: var(--font-body);
           text-transform: uppercase;
-          letter-spacing: 12px;
+          letter-spacing: 0.8em;
           font-size: 0.7rem;
-          opacity: 0.6;
+          font-weight: 600;
+          opacity: 0.5;
         }
         .hero-cta-group {
           display: flex;
@@ -143,13 +149,20 @@ const Hero = () => {
           font-weight: 600;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .layer-light .btn-main { background: #000; color: #fff; }
-        .layer-dark .btn-main { background: #fff; color: #000; }
-        .layer-light .btn-outline { border: 1px solid #000; color: #000; background: transparent; }
+        .layer-light .btn-main,
+        .layer-dark .btn-main {
+          background: transparent;
+          border: 1px solid #fff;
+          color: #fff;
+        }
+        .layer-light .btn-outline { border: 1px solid #fff; color: #fff; background: transparent; }
         .layer-dark .btn-outline { border: 1px solid #fff; color: #fff; background: transparent; }
         
         .btn-main:hover { transform: translateY(-3px); }
-        .btn-outline:hover { background: rgba(0,0,0,0.05); }
+        .btn-outline:hover,
+        .btn-main:hover {
+          background: rgba(255,255,255,0.08);
+        }
         .layer-dark .btn-outline:hover { background: rgba(255,255,255,0.05); }
 
         @keyframes flyInLogo {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { studioContact } from '../data/studio';
 
 const Footer = () => {
   return (
@@ -15,13 +16,20 @@ const Footer = () => {
               <h6>Vision</h6>
               <Link to="/">The Studio</Link>
               <Link to="/collection">Collection</Link>
-              <Link to="/studio">Inquiry</Link>
+              <Link to="/inquiry">Inquiry</Link>
             </div>
             <div className="footer-col">
               <h6>Studio</h6>
               <Link to="/studio">The Studio</Link>
               <Link to="/collection">Collection</Link>
               <Link to="/studio#location">Indiranagar</Link>
+            </div>
+            <div className="footer-col">
+              <h6>Contact</h6>
+              <a href={`mailto:${studioContact.email}`}>{studioContact.email}</a>
+              <a href={studioContact.phoneHref}>{studioContact.phone}</a>
+              <a href={studioContact.instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+              <a href={studioContact.facebookUrl} target="_blank" rel="noreferrer">Facebook</a>
             </div>
           </div>
         </div>
@@ -44,43 +52,49 @@ const Footer = () => {
         }
         .footer-logo-minimal {
           font-family: var(--font-heading);
-          font-size: 3rem;
-          letter-spacing: 10px;
+          font-size: clamp(2rem, 4vw, 3.5rem);
+          letter-spacing: 0.15em;
           margin-bottom: 20px;
+          font-weight: 200;
+          color: #fff;
         }
         .footer-brand p {
           font-family: var(--font-body);
           text-transform: uppercase;
-          letter-spacing: 5px;
-          font-size: 0.8rem;
-          opacity: 0.4;
+          letter-spacing: 0.3em;
+          font-size: 0.7rem;
+          opacity: 0.5;
         }
         .footer-links-minimal {
           display: flex;
           gap: 100px;
+          flex-wrap: wrap;
         }
         .footer-col h6 {
           font-family: var(--font-body);
           text-transform: uppercase;
-          letter-spacing: 3px;
-          font-size: 0.7rem;
-          margin-bottom: 30px;
-          opacity: 0.3;
+          letter-spacing: 4px;
+          font-size: 0.65rem;
+          margin-bottom: 40px;
+          opacity: 0.4;
+          font-weight: 600;
         }
-        .footer-col :global(a) {
+        .footer-col a {
           display: block;
-          font-family: var(--font-heading);
-          font-size: 1.2rem;
+          font-family: var(--font-body);
+          font-size: 0.9rem;
           font-weight: 300;
-          margin-bottom: 15px;
+          margin-bottom: 18px;
           opacity: 0.6;
           transition: var(--transition-smooth);
           color: #fff;
           text-decoration: none;
+          letter-spacing: 0.05em;
         }
-        .footer-col :global(a):hover {
+        .footer-col a:hover {
           opacity: 1;
-          transform: translateX(10px);
+          color: #fff;
+          transform: translateX(5px);
         }
         .footer-legal {
           display: flex;

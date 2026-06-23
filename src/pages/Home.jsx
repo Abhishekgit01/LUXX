@@ -98,15 +98,17 @@ const Home = () => {
           display: block;
           font-family: var(--font-body);
           text-transform: uppercase;
-          letter-spacing: 5px;
-          font-size: 0.8rem;
+          letter-spacing: 0.4em;
+          font-size: 0.7rem;
           margin-bottom: 15px;
           opacity: 0.5;
+          font-weight: 600;
         }
         .section-title {
           font-family: var(--font-heading);
-          font-size: 3.5rem;
-          font-weight: 300;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 200;
+          letter-spacing: 0.05em;
         }
         .featured-grid {
           display: grid;
@@ -157,11 +159,11 @@ const Home = () => {
         /* Google Reviews */
         .home-reviews {
           padding: 120px 0;
-          background: #fff;
-          color: #000;
+          background: #000;
+          color: #fff;
         }
         .home-reviews .section-title {
-          color: #000;
+          color: #fff;
           font-size: 2.5rem;
         }
         .reviews-grid {
@@ -170,10 +172,10 @@ const Home = () => {
           gap: 40px;
         }
         .review-card {
-          border-left: 2px solid #000;
+          border-left: 2px solid rgba(255,255,255,0.7);
           padding-left: 30px;
           text-decoration: none;
-          color: #000;
+          color: #fff;
           display: block;
           transition: opacity 0.3s ease;
         }

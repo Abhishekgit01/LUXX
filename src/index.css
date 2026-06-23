@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;600&display=swap');
+/* Fonts imported in index.html */
 
 :root {
   --bg-color: #000000;
@@ -7,8 +7,8 @@
   --text-dim: #888888;
   --accent: #ffffff;
   
-  --font-heading: 'Prata', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
   
   --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   --noise-opacity: 0.08;
@@ -39,8 +39,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 0.9;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  font-weight: 200;
 }
 
 a {
@@ -58,7 +59,8 @@ button {
   border: none;
   background: none;
   cursor: pointer;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
+  font-weight: 200;
 }
 
 /* Layout Utilities */
@@ -116,7 +118,7 @@ button {
 
 .split-white {
   flex: 1;
-  background: #fff;
+  background: #000;
 }
 
 .split-black {

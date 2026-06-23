@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="container nav-content">
         <Link to="/" className="logo">
-          LUXX
+          Luxx tattoo studio
         </Link>
         <ul className="nav-links">
           <li>
@@ -43,47 +43,51 @@ const NavBar = () => {
           width: 100%;
         }
         .logo {
-          font-family: var(--font-heading);
-          font-size: 1.8rem;
-          letter-spacing: 5px;
-          font-weight: 400;
+          font-family: 'Jost', sans-serif;
+          font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+          letter-spacing: 0.12em;
+          font-weight: 200;
           color: #fff;
           text-decoration: none;
+          white-space: nowrap;
+          text-transform: none;
         }
         .nav-links {
           display: flex;
-          gap: 50px;
+          gap: 40px;
           list-style: none;
         }
         .nav-links :global(a) {
           font-family: var(--font-body);
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           text-transform: uppercase;
-          letter-spacing: 3px;
+          letter-spacing: 4px;
           transition: var(--transition-smooth);
           opacity: 0.5;
           color: #fff;
           text-decoration: none;
+          font-weight: 300;
         }
         .nav-links :global(a):hover, .nav-links :global(a).active {
           opacity: 1;
         }
         .nav-cta {
           font-family: var(--font-body);
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           text-transform: uppercase;
-          letter-spacing: 3px;
-          padding: 12px 30px;
-          background: white;
-          color: black;
-          border: none;
-          font-weight: 600;
+          letter-spacing: 4px;
+          padding: 10px 25px;
+          background: transparent;
+          color: #fff;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          font-weight: 200;
           transition: var(--transition-smooth);
           cursor: pointer;
         }
         .nav-cta:hover {
-          background: #ddd;
-          transform: translateY(-2px);
+          background: rgba(255, 255, 255, 1);
+          color: #000;
+          border-color: #fff;
         }
         /* Adjusted mobile breakpoint to ensure visibility in subagent view */
         @media (max-width: 600px) {
