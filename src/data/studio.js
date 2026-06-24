@@ -44,6 +44,14 @@ const clientPortfolioFiles = [
   'WhatsApp Image 2026-05-29 at 6.00.23 PM (2).jpeg',
   'WhatsApp Image 2026-05-29 at 6.00.23 PM.jpeg',
   'WhatsApp Image 2026-05-29 at 6.00.24 PM (1).jpeg',
+  'WhatsApp Image 2026-05-29 at 6.00.24 PM.jpeg',
+  'portfolio1.png',
+  'portfolio2.png',
+  'portfolio3.png',
+  'portfolio4.png',
+  'portfolio5.png',
+  'tattoo1.png',
+  'tattoo2.png',
 ];
 
 const clientPortfolioWorks = clientPortfolioFiles.map((file, index) => ({
