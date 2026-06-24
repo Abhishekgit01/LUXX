@@ -3,7 +3,7 @@ import Contact from '../components/Contact';
 
 const Inquiry = () => {
   return (
-    <div className="page-inquiry" style={{ paddingTop: '80px', minHeight: '100vh', background: '#fff' }}>
+    <div className="page-inquiry" style={{ paddingTop: '80px', minHeight: '100vh', background: '#000' }}>
       <Contact />
       <style>{`
         .page-inquiry .contact-editorial {

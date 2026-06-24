@@ -1,12 +1,5 @@
 import React from 'react';
-
-const tattoos = [
-  { id: 1, src: '/mountain.png?v=2', category: 'Fine-Line Divinity', title: 'Mountain Wanderer' },
-  { id: 2, src: '/greco.png?v=2', category: 'Greco-Roman Realism', title: 'The Greco Sleeve' },
-  { id: 3, src: '/cupid.png?v=2', category: 'Renaissance Study', title: 'Cupid & Psyche' },
-  { id: 4, src: '/anubis.png?v=2', category: 'Ancient Blackwork', title: 'Anubis Eternal' },
-  { id: 5, src: '/elephant.png?v=2', category: 'Micro-Realism', title: 'The Great Elephant' },
-];
+import { galleryWorks, studioContact } from '../data/studio';
 
 const Gallery = () => {
   return (
@@ -18,10 +11,10 @@ const Gallery = () => {
         </div>
         
         <div className="masonry-grid">
-          {tattoos.map((item) => (
-            <div key={item.id} className="masonry-item" data-reveal>
-              <a href="https://www.instagram.com/luxx_tattoo_studio/" target="_blank" rel="noreferrer" className="work-card">
-                <img src={item.src} alt={item.title} className="work-image" />
+          {galleryWorks.map((item) => (
+            <div key={item.src} className="masonry-item" data-reveal>
+              <a href={studioContact.instagramUrl} target="_blank" rel="noreferrer" className="work-card">
+                <img src={item.src} alt={item.title} className="work-image" loading="lazy" decoding="async" />
                 <div className="work-overlay">
                   <div className="work-info">
                     <span className="work-category">{item.category}</span>

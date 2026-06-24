@@ -1,4 +1,5 @@
 import React from 'react';
+import { studioContact } from '../data/studio';
 
 const About = () => {
   return (
@@ -24,7 +25,7 @@ const About = () => {
             </div>
             <p>
               Operating from his private sanctuary in Indiranagar, Roshan treats every tattoo as a collaboration of souls. 
-              Find his full portfolio on Instagram <a href="https://instagram.com/luxx_tattoo_studio" target="_blank" rel="noreferrer" style={{textDecoration: 'underline'}}>@luxx_tattoo_studio</a>.
+              Find his full portfolio on Instagram <a href={studioContact.instagramUrl} target="_blank" rel="noreferrer" style={{textDecoration: 'underline'}}>{studioContact.instagramHandle}</a>.
             </p>
           </div>
           <div className="signature">LUXX_</div>
@@ -34,8 +35,8 @@ const About = () => {
         .about-editorial {
           min-height: 100vh;
           padding: 100px 0;
-          background: #fff;
-          color: #000;
+          background: #000;
+          color: #fff;
           display: flex;
           align-items: center;
         }
@@ -83,19 +84,19 @@ const About = () => {
           font-weight: 300;
           font-style: italic;
           margin-bottom: 40px;
-          border-left: 2px solid #000;
+          border-left: 2px solid rgba(255, 255, 255, 0.7);
           padding-left: 30px;
         }
         .about-content p {
           font-size: 1.1rem;
           line-height: 1.8;
-          color: #444;
+          color: rgba(255, 255, 255, 0.7);
           margin-bottom: 30px;
           max-width: 500px;
         }
         .reviews-snippet {
           margin-bottom: 40px;
-          border-left: 2px solid #000;
+          border-left: 2px solid rgba(255, 255, 255, 0.7);
           padding-left: 30px;
         }
         .review-item {
@@ -106,7 +107,7 @@ const About = () => {
           font-size: 1.2rem;
           font-style: italic;
           margin-bottom: 10px;
-          color: #000;
+          color: #fff;
         }
         .review-author {
           font-family: var(--font-body);

@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
+import { studioContact } from '../data/studio';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [intention, setIntention] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  const createInquiryMailto = () => {
+    const subject = encodeURIComponent(`Tattoo Inquiry: ${name || 'New Client'}`);
+    const body = encodeURIComponent(`Name: ${name}\n\nVision:\n${intention}`);
+
+    return `mailto:${studioContact.email}?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Tattoo Inquiry: ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\n\nVision:\n${intention}`);
-    
-    // This is the "Working" part: it opens their email app immediately
-    window.location.href = `mailto:roshantattooartist@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = createInquiryMailto();
     
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 15000);
@@ -30,11 +35,20 @@ const Contact = () => {
             </div>
             <div className="info-block">
               <h6>Email</h6>
-              <p>DM on Instagram</p>
+              <a href={`mailto:${studioContact.email}`}>{studioContact.email}</a>
+            </div>
+            <div className="info-block">
+              <h6>Phone</h6>
+              <a href={studioContact.phoneHref}>{studioContact.phone}</a>
             </div>
             <div className="info-block">
               <h6>Social</h6>
-              <p>@luxx_tattoo_studio</p>
+              <a href={studioContact.instagramUrl} target="_blank" rel="noreferrer">
+                {studioContact.instagramHandle}
+              </a>
+              <a href={studioContact.facebookUrl} target="_blank" rel="noreferrer">
+                Facebook
+              </a>
             </div>
           </div>
         </div>
@@ -47,15 +61,15 @@ const Contact = () => {
                 If not, click the button below to send your vision directly to Roshan.
               </p>
               <a 
-                href={`mailto:roshantattooartist@gmail.com?subject=Tattoo Inquiry: ${name}&body=Name: ${name}%0D%0AVision: ${intention}`}
+                href={createInquiryMailto()}
                 className="editorial-submit"
-                style={{ background: '#000', color: '#fff', padding: '20px 40px', textDecoration: 'none', display: 'inline-block' }}
+                style={{ border: '1px solid rgba(255,255,255,0.7)', color: '#fff', padding: '20px 40px', textDecoration: 'none', display: 'inline-block' }}
               >
                 Send Email Manually →
               </a>
               <button 
                 onClick={() => setSubmitted(false)}
-                style={{ display: 'block', marginTop: '30px', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', opacity: 0.5 }}
+                style={{ display: 'block', marginTop: '30px', background: 'none', border: 'none', color: '#fff', textDecoration: 'underline', cursor: 'pointer', opacity: 0.5 }}
               >
                 ← Back to form
               </button>
@@ -93,8 +107,8 @@ const Contact = () => {
       <style>{`
         .contact-editorial {
           padding: 200px 0;
-          background: #fff;
-          color: #000;
+          background: #000;
+          color: #fff;
         }
         .contact-editorial-grid {
           display: grid;
@@ -124,6 +138,8 @@ const Contact = () => {
         .editorial-contact-info {
           display: flex;
           gap: 80px;
+          row-gap: 40px;
+          flex-wrap: wrap;
         }
         .info-block h6 {
           font-family: var(--font-body);
@@ -133,10 +149,18 @@ const Contact = () => {
           margin-bottom: 20px;
           opacity: 0.4;
         }
-        .info-block p {
+        .info-block p,
+        .info-block a {
+          display: block;
           font-family: var(--font-heading);
-          font-size: 1.5rem;
+          font-size: clamp(1.05rem, 1.4vw, 1.5rem);
           font-weight: 300;
+          line-height: 1.4;
+          overflow-wrap: anywhere;
+          text-decoration: none;
+        }
+        .info-block a + a {
+          margin-top: 8px;
         }
         .editorial-form {
           display: flex;
@@ -147,7 +171,7 @@ const Contact = () => {
           display: flex;
           flex-direction: column;
           gap: 15px;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
           padding-bottom: 20px;
         }
         .editorial-input-group label {
@@ -165,7 +189,11 @@ const Contact = () => {
           font-family: var(--font-heading);
           font-size: 1.8rem;
           font-weight: 300;
-          color: #000;
+          color: #fff;
+        }
+        .editorial-input-group input::placeholder,
+        .editorial-input-group textarea::placeholder {
+          color: rgba(255, 255, 255, 0.35);
         }
         .editorial-submit {
           align-self: flex-start;

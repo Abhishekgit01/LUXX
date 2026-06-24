@@ -7,7 +7,7 @@ const Studio = () => {
   return (
     <div className="page-studio" style={{ paddingTop: '80px' }}>
       <About />
-      <div style={{ height: '2px', background: '#000', width: '100%' }}></div>
+      <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', width: '100%' }}></div>
       <div className="studio-location-info container">
         <div className="location-card">
           <h3>The Sanctuary</h3>
@@ -31,11 +31,11 @@ const Studio = () => {
       <style>{`
         .studio-location-info {
           padding: 100px 0;
-          background: #fff;
-          color: #000;
+          background: #000;
+          color: #fff;
         }
         .location-card {
-          border-left: 1px solid #000;
+          border-left: 1px solid rgba(255, 255, 255, 0.7);
           padding-left: 40px;
           max-width: 600px;
         }
@@ -68,7 +68,7 @@ const Studio = () => {
           text-transform: uppercase;
           letter-spacing: 3px;
           font-size: 0.8rem;
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.7);
           padding-bottom: 5px;
           transition: opacity 0.3s ease;
         }
