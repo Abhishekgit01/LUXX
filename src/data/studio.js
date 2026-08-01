@@ -10,6 +10,12 @@ export const studioContact = {
 export const demoWorks = [];
 
 const clientPortfolioFiles = [
+  'tattoo-spartan.png',
+  'tattoo-memento-mori.jpg',
+  'tattoo-snake.png',
+  'tattoo-lion.png',
+  'tattoo-fairy-tail.png',
+  'tattoo-cat-dora.jpg',
   'WhatsApp Image 2026-05-29 at 6.00.15 PM (1).jpeg',
   'WhatsApp Image 2026-05-29 at 6.00.15 PM.jpeg',
   'WhatsApp Image 2026-05-29 at 6.00.16 PM (1).jpeg',
