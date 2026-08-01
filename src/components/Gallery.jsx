@@ -72,12 +72,11 @@ const Gallery = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: grayscale(1) contrast(1.1);
+          filter: none;
           transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .work-card:hover .work-image {
           transform: scale(1.05);
-          filter: grayscale(0) contrast(1);
         }
         .work-overlay {
           position: absolute;
