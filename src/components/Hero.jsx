@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="hero-subtext">
         <p className="master-artist">Luxx — Master Calligrapher & Ink Artist</p>
         <div className="hero-cta-group">
-          <button className="btn-main">View Portfolio</button>
+          <Link to="/collection" className="btn-main">View Portfolio</Link>
           <Link to="/inquiry" className="btn-outline">Book Session</Link>
         </div>
       </div>

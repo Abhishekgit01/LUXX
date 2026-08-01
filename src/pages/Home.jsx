@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import { galleryWorks } from '../data/studio';
 
-const featuredWorks = [
-  { src: '/mountain.png', title: 'The Mountain Wanderer' },
-  { src: '/greco.png', title: 'Divine Realism' },
-  { src: '/anubis.png', title: 'Ancient Echoes' },
-];
+const featuredWorks = galleryWorks.slice(0, 3);
 
 const Home = () => {
   return (
